@@ -40,6 +40,13 @@
       >
         เข้าสู่ระบบ
       </v-btn>
+
+      <v-btn
+        text
+        @click="goToRegister()"
+      >
+        สมัครสมาชิก
+      </v-btn>
     </v-app-bar>
 
     <v-main>
@@ -62,6 +69,9 @@ export default {
     goToManage() {
       this.$router.push('/manageTable')
       // this.$router.push({path: })
+    },
+    goToRegister() {
+      this.$router.push('/Register')
     }
   }
 }

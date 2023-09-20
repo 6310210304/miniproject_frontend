@@ -27,7 +27,14 @@ const routes = [
     path: '/manageTable',
       name: 'manageTable',
       component: () => import('../views/TableView.vue')
+  },
+  {
+    path: '/Register',
+      name: 'Register',
+      component: () => import('../views/RegisterView.vue')
+
   }
+
 ]
 
 const router = new VueRouter({
