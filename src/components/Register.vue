@@ -1,6 +1,6 @@
 <template>
     <v-card class="mx-15">
-        <v-card-title>เข้าสู่ระบบ</v-card-title>
+        <v-card-title>สมัครสมาชิก</v-card-title>
         <v-card-text>
             <v-form
                 ref="form"
@@ -20,6 +20,22 @@
                 v-model="password"
                 :rules="passwordRules"
                 label="รหัสผ่าน"
+                required
+                outlined
+            ></v-text-field>
+
+            <v-text-field
+                v-model="firstname"
+                :rules="firstnameRules"
+                label="ชื่อ"
+                required
+                outlined
+            ></v-text-field>
+
+            <v-text-field
+                v-model="lastname"
+                :rules="lastnameRules"
+                label="นามสกุล"
                 required
                 outlined
             ></v-text-field>
@@ -67,6 +83,14 @@ export default {
       password: '',
       passwordRules: [
         v => !!v || 'กรุณากรอกรหัสผ่าน',
+      ],
+      firstname: '',
+      firstnameRules: [
+        v => !!v || 'กรุณากรอกชื่อ',
+      ],
+      lastname: '',
+      lastnameRules: [
+        v => !!v || 'กรุณากรอกนามสกุล',
       ]
     }),
     methods: {

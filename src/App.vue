@@ -6,33 +6,41 @@
       dark
     >
       <div class="d-flex align-center">
-        <v-img
+        <!-- <v-img
           alt="Vuetify Logo"
           class="shrink mr-2"
           contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
+          src=""
           transition="scale-transition"
           width="40"
         />
 
         <v-img
-          alt="Vuetify Name"
+          alt="Recommended food center Name"
           class="shrink mt-1 hidden-sm-and-down"
           contain
           min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
+          src=""
           width="100"
-        />
+        /> -->
+        
+          
+        <!-- <v-btn
+          text
+          @click="gotoHome()"
+        > -->
+          Recommended food center
+        <!-- </v-btn> -->
       </div>
 
       <v-spacer></v-spacer>
 
-      <v-btn
+      <!-- <v-btn
         text
         @click="goToManage()"
       >
         หน้าจัดการข้อมูล
-      </v-btn>
+      </v-btn> -->
 
       <v-btn
         text

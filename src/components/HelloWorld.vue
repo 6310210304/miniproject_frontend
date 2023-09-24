@@ -1,21 +1,22 @@
 <template>
-  <v-container>
-    <v-row class="text-center">
-      <!-- <v-col cols="12">
+   <v-container>
+     <v-row class="text-center">
+      <v-col cols="12">
         <v-img
-          :src="require('../assets/logo.svg')"
+          :src="require('../assets/PSU.png')"
           class="my-3"
           contain
           height="200"
         />
-      </v-col> -->
+      </v-col>
 
-      <!-- <v-col class="mb-4">
-        <h1 class="display-2 font-weight-bold mb-3">
-          Welcome to 
+      <v-col class="mb-4">
+        <h1 class="display-2 font-weight-bold mb-3" >
+          Welcome to <br><br>
+          Recommended food center
         </h1><br>
 
-        <p class="subheading font-weight-regular">
+        <!-- <p class="subheading font-weight-regular">
           For help and collaboration with other Vuetify developers,
           <br>please join our online
           <a
@@ -86,8 +87,8 @@
           >
             {{ eco.text }}
           </a>
-        </v-row>
-      </v-col> -->
+        </v-row> -->
+      </v-col>
     </v-row>
   </v-container>
 </template>
