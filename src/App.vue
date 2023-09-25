@@ -44,6 +44,14 @@
 
       <v-btn
         text
+        @click="gotoHomepage()"
+      >
+        หน้าแรก
+      </v-btn>
+
+
+      <v-btn
+        text
         @click="goToLogin()"
       >
         เข้าสู่ระบบ
@@ -55,6 +63,8 @@
       >
         สมัครสมาชิก
       </v-btn>
+
+
     </v-app-bar>
 
     <v-main>
@@ -80,6 +90,9 @@ export default {
     },
     goToRegister() {
       this.$router.push('/Register')
+    },
+    gotoHomepage() {
+      this.$router.push('/Homepage')
     }
   }
 }

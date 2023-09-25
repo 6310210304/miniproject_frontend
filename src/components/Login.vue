@@ -1,5 +1,8 @@
 <template>
-    <v-card class="mx-15">
+    <v-card 
+        lass="mx-auto"
+        max-width="344"
+    >
         <v-card-title>เข้าสู่ระบบ</v-card-title>
         <v-card-text>
             <v-form
