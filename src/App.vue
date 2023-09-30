@@ -25,12 +25,12 @@
         /> -->
         
           
-        <!-- <v-btn
+        <v-btn
           text
-          @click="gotoHome()"
-        > -->
+          @click="goToHome()"
+        >
           Recommended food center
-        <!-- </v-btn> -->
+        </v-btn>
       </div>
 
       <v-spacer></v-spacer>
@@ -81,6 +81,9 @@ export default {
   data: () => ({
   }),
   methods: {
+    goToHome() {
+      this.$router.push('/')
+    },
     goToLogin() {
       this.$router.push('/login')
     },
