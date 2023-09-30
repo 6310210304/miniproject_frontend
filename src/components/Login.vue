@@ -1,9 +1,9 @@
 <template>
-    <v-card 
-        lass="mx-auto"
-        max-width="344"
+    <v-card
+    class="mx-auto"
+    max-width="344"
     >
-        <v-card-title>เข้าสู่ระบบ</v-card-title>
+        <v-card-title class="mx-auto">เข้าสู่ระบบ</v-card-title>
         <v-card-text>
             <v-form
                 ref="form"
@@ -39,7 +39,7 @@
                 color="success"
                 class="mr-4"
                 block
-                @click="Login"
+                @click="Login" 
             >
                 เข้าสู่ระบบ
             </v-btn>

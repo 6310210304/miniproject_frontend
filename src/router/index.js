@@ -40,6 +40,12 @@ const routes = [
       name: 'Homepage',
       component: () => import('../views/HomepageView.vue')
 
+  },
+  {
+    path: '/HomeSci',
+      name: 'HomeSci',
+      component: () => import('../views/HomeSciView.vue')
+
   }
 
 ]

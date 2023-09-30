@@ -57,12 +57,12 @@
         เข้าสู่ระบบ
       </v-btn>
 
-      <v-btn
+      <!-- <v-btn
         text
         @click="goToRegister()"
       >
         สมัครสมาชิก
-      </v-btn>
+      </v-btn> -->
 
 
     </v-app-bar>

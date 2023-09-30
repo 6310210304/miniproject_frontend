@@ -2,7 +2,7 @@
     <v-container>
         <v-row>
             <v-col cols="12">
-                <Homepage/>
+                <HomeSci/>
             </v-col>
         </v-row>
     </v-container>
@@ -11,12 +11,8 @@
 <script>
 export default {
     components: {
-        Homepage: () => import('../components/Homepage.vue')
-    },
-    goToHomeSci() {
-      this.$router.push('/homesci')
+        HomeSci: () => import('../components/HomeSci.vue')
     }
-    
 }
 </script>
 

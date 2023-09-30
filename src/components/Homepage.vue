@@ -4,6 +4,7 @@
       <v-card
         class="mx-auto"
         max-width="344"
+        @click="goToHomeSci()"
       >
         <v-img 
           src="https://ced.sci.psu.ac.th/img/ced1.JPG"
@@ -159,7 +160,7 @@
         </v-card-title>
 
         <v-card-subtitle>
-          มหาวิทยาลัยสงขลานครินทร์วิทยาเขตหาดใหญ่
+          มหาวิทยาลัยสงขลานครินทร์ วิทยาเขตหาดใหญ่
         </v-card-subtitle>
 
         <!-- <v-card-actions>
@@ -199,7 +200,9 @@
       <v-card
         class="mx-auto"
         max-width="344"
+        
       >
+
         <v-img 
           src="https://f.ptcdn.info/867/048/000/okei8m6mdpAXohH5Cdh-o.jpg"
           height="200px"
@@ -210,7 +213,7 @@
         </v-card-title>
 
         <v-card-subtitle>
-          มหาวิทยาลัยสงขลานครินทร์วิทยาเขตหาดใหญ่
+          มหาวิทยาลัยสงขลานครินทร์ วิทยาเขตหาดใหญ่
         </v-card-subtitle>
 
         <!-- <v-card-actions>
@@ -259,7 +262,11 @@ export default {
           if (this.$refs.form.validate()) {
               localStorage.setItem('username', this.name)
           } 
-      }
+      },
+      goToHomeSci() {
+      this.$router.push('/HomeSci')
+    }
+
   }
 }
 </script>
