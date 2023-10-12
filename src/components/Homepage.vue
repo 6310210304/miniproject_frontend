@@ -204,12 +204,12 @@
       >
 
         <v-img 
-          src="https://f.ptcdn.info/867/048/000/okei8m6mdpAXohH5Cdh-o.jpg"
+          src="https://www.fms.psu.ac.th/wp-content/uploads/2020/04/vision.jpg"
           height="200px"
         ></v-img>
 
         <v-card-title>
-          คณะนิติศาสตร์
+          คณะวิทยาการจัดการ
         </v-card-title>
 
         <v-card-subtitle>
