@@ -18,6 +18,9 @@ import LoginForm from '../components/Login.vue'
 export default {
     components: {
         LoginForm
+    },
+    goToHomeAdmin() {
+      this.$router.push('/HomeAdmin')
     }
 }
 </script>

@@ -52,6 +52,12 @@ const routes = [
       name: 'EditDelete',
       component: () => import('../views/EditDeleteView.vue')
 
+  },
+  {
+    path: '/HomeAdmin',
+      name: 'HomeAdmin',
+      component: () => import('../views/HomeAdminView.vue')
+
   }
 
 ]

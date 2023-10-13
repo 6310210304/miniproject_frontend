@@ -39,7 +39,7 @@
                 color="success"
                 class="mr-4"
                 block
-                @click="Login" 
+                @click="goToHomeAdmin()" 
             >
                 เข้าสู่ระบบ
             </v-btn>
@@ -63,10 +63,11 @@ export default {
       ]
     }),
     methods: {
-        Login () {
+        goToHomeAdmin() {
             if (this.$refs.form.validate()) {
-                localStorage.setItem('username', this.name)
-            } 
+            localStorage.setItem('username', this.name)
+            this.$router.push('/HomeAdmin') // นำทางไปยังหน้า HomeAdmin
+            }
         }
     }
 }
