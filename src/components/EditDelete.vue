@@ -57,10 +57,10 @@
               <v-card-actions>
                 <v-spacer></v-spacer>
                 <v-btn color="blue darken-1" text @click="closeDelete"
-                  >Cancel</v-btn
+                >ยกเลิก</v-btn
                 >
                 <v-btn color="red darken-1" text @click="deleteItemConfirm"
-                  >OK</v-btn
+                  >ตกลง</v-btn
                 >
                 <v-spacer></v-spacer>
               </v-card-actions>
@@ -94,29 +94,31 @@
 
 
 <script>
+import HomeSci from "@/components/HomeSci.vue";
+
 export default {
   data: () => ({
     dialog: false,
     dialogDelete: false,
     headers: [
       {
-        text: "Name",
+        text: "ชื่อ",
         align: "start",
         sortable: false,
         value: "locationName",
       },
       {
-        text: "Picture",
+        text: "รูปภาพ",
         sortable: false,
         value: "locationPicture",
         // เพิ่ม scopedSlots เพื่อแสดงรูปภาพ
       },
       {
-        text: "Description",
+        text: "คำอธิบาย",
         value: "locationDescription",
       },
       {
-        text: "actions",
+        text: "จัดการ",
         align: "start",
         sortable: false,
         value: "actions",

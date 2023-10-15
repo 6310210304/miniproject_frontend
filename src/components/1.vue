@@ -109,7 +109,9 @@ export default {
     async deleteItemConfirm() {
 
       try {
-        var response = await this.axios.delete("http://localhost:8000/reserve/" + this.idForDelete);
+        var response = await this.axios.delete(
+  "http://localhost:8000/reserve/" + this.idForDelete
+        );
         this.initialize();
       } catch (error) {
         console.log(error.message);
