@@ -57,10 +57,10 @@
               <v-card-actions>
                 <v-spacer></v-spacer>
                 <v-btn color="blue darken-1" text @click="closeDelete"
-                >ยกเลิก</v-btn
+                  >Cancel</v-btn
                 >
                 <v-btn color="red darken-1" text @click="deleteItemConfirm"
-                  >ตกลง</v-btn
+                  >OK</v-btn
                 >
                 <v-spacer></v-spacer>
               </v-card-actions>
@@ -69,8 +69,12 @@
         </v-toolbar>
       </template>
       <template v-slot:item.locationPicture="{ item }">
-         <img  :src="'data:image/jpeg;base64,' + item.locationPicture" alt="Image" style="max-width: 200px" />
-       </template>
+        <img
+          :src="'data:image/jpeg;base64,' + item.locationPicture"
+          alt="Image"
+          style="max-width: 200px"
+        />
+      </template>
 
       <template v-slot:item.actions="{ item }">
         <v-icon
@@ -94,31 +98,28 @@
 
 
 <script>
-import HomeSci from "@/components/HomeSci.vue";
-
 export default {
   data: () => ({
     dialog: false,
     dialogDelete: false,
     headers: [
       {
-        text: "ชื่อ",
+        text: "Name",
         align: "start",
         sortable: false,
         value: "locationName",
       },
       {
-        text: "รูปภาพ",
+        text: "Picture",
         sortable: false,
         value: "locationPicture",
-        // เพิ่ม scopedSlots เพื่อแสดงรูปภาพ
       },
       {
-        text: "คำอธิบาย",
+        text: "Description",
         value: "locationDescription",
       },
       {
-        text: "จัดการ",
+        text: "actions",
         align: "start",
         sortable: false,
         value: "actions",
@@ -127,6 +128,7 @@ export default {
 
     desserts: [],
     editedIndex: -1,
+
     editedItem: {
       name: "",
       calories: 0,
@@ -178,7 +180,7 @@ export default {
       this.desserts = [];
       try {
         var data = await this.axios.get("http://localhost:9000/location");
-        console.log("data employee ====>", data);
+        console.log("data location ====>", data);
         this.desserts = data.data;
       } catch (error) {}
     },
@@ -195,10 +197,21 @@ export default {
       this.dialog = true;
     },
 
-    deleteItem(item) {
-      this.editedIndex = this.desserts.indexOf(item);
-      this.editedItem = Object.assign({}, item);
-      this.dialogDelete = true;
+    async deleteItem(item) {
+      // this.editedIndex = this.desserts.indexOf(item);
+      // this.editedItem = Object.assign({}, item);
+      // this.dialogDelete = true;
+
+      try {
+        var data = await this.axios.delete(
+          `http://localhost:9000/location/${item.locationId}`
+        );
+
+        if (data.status === 200) {
+          this.initialize();
+          alert("ลบสำเร็จ");
+        }
+      } catch (error) {}
     },
 
     deleteItemConfirm() {
