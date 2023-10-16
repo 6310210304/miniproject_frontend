@@ -20,21 +20,23 @@
               <v-card-text>
                 <v-container>
                   <v-row>
+                    <v-col cols="2" sm="12" md="12">
+                      <input
+                        type="file"   
+                        v-on:change="handleImageUpload" 
+                      ></input>
+                    </v-col>
+
                     <v-col cols="1" sm="6" md="4">
                       <v-text-field
-                        v-model="editedItem.name"
+                        v-model="editedItem.locationName"
                         label="Name"
                       ></v-text-field>
                     </v-col>
+
                     <v-col cols="12" sm="6" md="4">
                       <v-text-field
-                        v-model="editedItem.picture"
-                        label="Picture"
-                      ></v-text-field>
-                    </v-col>
-                    <v-col cols="12" sm="6" md="4">
-                      <v-text-field
-                        v-model="editedItem.description"
+                        v-model="editedItem.locationDescription"
                         label="Description"
                       ></v-text-field>
                     </v-col>
@@ -45,7 +47,9 @@
               <v-card-actions>
                 <v-spacer></v-spacer>
                 <v-btn color="red darken-1" text @click="close"> Cancel </v-btn>
-                <v-btn color="blue darken-1" text @click="save"> Save </v-btn>
+                <v-btn color="blue darken-1" text @click="addLocation">
+                  Save
+                </v-btn>
               </v-card-actions>
             </v-card>
           </v-dialog>
@@ -77,14 +81,14 @@
       </template>
 
       <template v-slot:item.actions="{ item }">
-        <v-icon
+        <!-- <v-icon
           color="yellow darken-1"
           big
           class="mr-2"
           @click="editItem(item)"
         >
           mdi-pencil
-        </v-icon>
+        </v-icon> -->
         <v-icon color="red darken-1" big @click="deleteItem(item)">
           mdi-delete
         </v-icon>
@@ -213,6 +217,38 @@ export default {
         }
       } catch (error) {}
     },
+    async addLocation() {
+      try {
+        // Create a new FormData object
+        const formData = new FormData();
+
+        // Append the fields to the FormData object
+        const data = {
+          locationName: this.editedItem.locationName,
+          locationDescription: this.editedItem.locationDescription,
+        };
+        formData.append("body", JSON.stringify(data));
+        formData.append("photo", this.editedItem.selectedImage);
+
+        const response = await this.axios.post(
+          "http://localhost:9000/location",
+          formData,
+          {
+            headers: {
+              "Content-Type": "multipart/form-data", // Set the content type to multipart/form-data
+            },
+          }
+        );
+
+        if (response.status === 201) {
+          // await this.initialize();
+          alert("เพิ่มสำเร็จ");
+          window.location.reload()
+        }
+      } catch (error) {
+        console.error("Error adding location:", error);
+      }
+    },
 
     deleteItemConfirm() {
       this.desserts.splice(this.editedIndex, 1);
@@ -242,6 +278,12 @@ export default {
         this.desserts.push(this.editedItem);
       }
       this.close();
+    },
+    handleImageUpload(event) {
+      const selectedFile = event.target.files[0]; // Get the selected file
+      // You can now do something with the selected image file, for example, send it to the server.
+      // Here, we'll just store the selected file in a data property for reference.
+      this.editedItem.selectedImage = selectedFile;
     },
   },
 };

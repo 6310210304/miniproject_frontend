@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app style="color: #33CCCC" >
     <v-app-bar
       app
       color="primary"
@@ -96,6 +96,10 @@ export default {
     },
     gotoHomepage() {
       this.$router.push('/Homepage')
+    }
+    ,
+    gotoAdd() {
+      this.$router.push('/add')
     }
   }
 }
